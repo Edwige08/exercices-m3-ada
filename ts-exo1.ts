@@ -6,15 +6,15 @@ type Recipes = {
     prepTimeMinutes: number,
     cookTimeMinutes: number,
     servings: number,
-      difficulty: string,
-      cuisine: string,
-      caloriesPerServing: number,
-      tags: string[],
-      userId: number,
-      image: string,
-      rating: number,
-      reviewCount: number,
-      mealType: string[]
+    difficulty: string,
+    cuisine: string,
+    caloriesPerServing: number,
+    tags: string[],
+    userId: number,
+    image: string,
+    rating: number,
+    reviewCount: number,
+    mealType: string[]
 }
 type Data = {
     recipes: Recipes[],
@@ -31,4 +31,12 @@ async function getRecipes() {
     console.log(data.recipes[10]);
 }
 
-getRecipes();
+// getRecipes();
+
+async function getRecipesTags() {
+    const response = await fetch('https://dummyjson.com/recipes/tags');
+    const data: string[] = await response.json();
+    console.log(data);
+}
+
+getRecipesTags();
