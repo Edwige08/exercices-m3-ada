@@ -22,6 +22,7 @@ type Data = {
     skip: number,
     limit: number
 }
+type MealType = 'breakfast' | 'lunch' | 'dinner' | 'snack' | 'dessert';
 
 async function getRecipes() {
     const response = await fetch('https://dummyjson.com/recipes');
@@ -47,4 +48,16 @@ async function getRecipeMealTypeSnack() {
     console.log(data);
 }
 
-getRecipeMealTypeSnack()
+// getRecipeMealTypeSnack()
+
+async function getRecipeByMealType(mealType: string) {
+    const response = await fetch(`https://dummyjson.com/recipes/meal-type/${mealType}`);
+    const data: Data = await response.json();
+    console.log(data);
+}
+
+getRecipeByMealType('snack')
+// getRecipeByMealType('breakfast')
+// getRecipeByMealType('lunch')
+// getRecipeByMealType('dinner')
+// getRecipeByMealType('dessert')
