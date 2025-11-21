@@ -39,4 +39,12 @@ async function getRecipesTags() {
     console.log(data);
 }
 
-getRecipesTags();
+// getRecipesTags();
+
+async function getRecipeMealTypeSnack() {
+    const response = await fetch('https://dummyjson.com/recipes/meal-type/snack');
+    const data: Data = await response.json();
+    console.log(data);
+}
+
+getRecipeMealTypeSnack()
