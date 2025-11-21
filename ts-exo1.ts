@@ -50,7 +50,7 @@ async function getRecipeMealTypeSnack() {
 
 // getRecipeMealTypeSnack()
 
-async function getRecipeByMealType(mealType: string) {
+async function getRecipeByMealType(mealType: MealType) {
     const response = await fetch(`https://dummyjson.com/recipes/meal-type/${mealType}`);
     const data: Data = await response.json();
     console.log(data);
